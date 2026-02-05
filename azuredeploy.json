@@ -12,6 +12,7 @@
     "planName": { "type": "string" },
     "packageUrl": {
       "type": "string",
+      "default": "https://raw.githubusercontent.com/abushati/azurehec/main/functionapp.zip",
       "metadata": {
         "description": "URL to functionapp.zip (Blob SAS or public URL)"
       }
