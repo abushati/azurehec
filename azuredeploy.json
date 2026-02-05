@@ -4,15 +4,12 @@
   "parameters": {
     "functionAppName": { "type": "string" },
     "location": { "type": "string", "defaultValue": "[resourceGroup().location]" },
-
     "storageAccountName": {
       "type": "string",
       "minLength": 3,
       "maxLength": 24
     },
-
     "planName": { "type": "string" },
-
     "packageUrl": {
       "type": "string",
       "metadata": {
@@ -78,7 +75,6 @@
       "properties": {
         "FUNCTIONS_EXTENSION_VERSION": "~4",
         "FUNCTIONS_WORKER_RUNTIME": "python",
-
         "AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',parameters('storageAccountName'),';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2023-01-01').keys[0].value,';EndpointSuffix=',environment().suffixes.storage)]",
         "WEBSITE_RUN_FROM_PACKAGE": "[parameters('packageUrl')]"
       }
